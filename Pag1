@@ -1,0 +1,33 @@
+<html>
+<title>Faro</title>
+
+<body style="background-color:rgba(0, 0, 0, 0.199);">
+    <header>
+        <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <h1>Ground-Zero</h1>
+        </div>
+        <div>
+            <a href="login.html" class="btn btn-success">Inicio sesion</a>
+        </div>
+
+        </nav>
+    </header>
+    <table border="0" align="center">
+        <tr>
+            <td><img src="Faro.jpg"></td>
+            <td>
+                <li>Autor: Edward Hopper</li>
+                <li>Género: Marina</li>
+                <li>Título original: Light at Two Lights</li>
+                <li>Tipo: Cuadros</li>
+                <li>Técnica: Acuarela y lápiz</li>
+                <li>Soporte: Papel</li>
+                <li>Año: 1927</li>
+        </tr>
+    </table>
+    <h1 align="center"> Descripcion </h1>
+    <pre
+        align="center">Obra al acuarela y lápiz titulada Faro a Dos Luces, pintada por Edward Hopper en 1927.</br> Pertenece a la etapa artística más temprana del artista, este en concreto es un ejercicio de perspectiva y composición geométrica.</br> Las técnicas de iluminación, coloración y disposición de elementos, se vieron desarrollados de forma potente durante toda su carrera.</br></pre>
+</body>
+</html>
