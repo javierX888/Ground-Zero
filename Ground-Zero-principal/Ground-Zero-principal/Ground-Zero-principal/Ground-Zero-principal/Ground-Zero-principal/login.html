@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+ 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+          integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+          integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+ 
+    <head>
+        <title>Inicio de sesion</title>
+        <style>
+
+            input[type=text], input[type=password] {
+                width: 50%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+                align-self: center;
+            }
+
+            .binicio{
+                background-color: #1bbb23;
+                color: white;
+                padding: 14px 15px;
+                margin: 5px 0;
+                border: none;
+                cursor: pointer;
+                width: 30%;
+            }
+
+            .bcancelar {
+                width: 30%;
+                padding: 14px 15px;
+                cursor: pointer;
+                background-color: #f44336;
+                color: white;
+                border: none;
+            }
+
+            .container {
+                width: 800px;
+                max-width: 800px;
+                margin:0 auto;
+                box-shadow: #686868;
+                
+                align-self: center;
+                align-items: center;
+                box-align: center;
+            }
+            .form_hidden{
+                display: none;
+            }
+        
+        </style>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded",()=>{
+                const FormInicio=document.querySelector("#inicio");
+                const FormCrear=document.querySelector("#crear");
+
+                document.querySelector("#linkCrearCuenta").addEventListener("click",()=> {
+                    FormInicio.classList.add("form_hidden");
+                    FormCrear.classList.remove("form_hidden");
+                })
+                document.querySelector("#linkIniciarSesion").addEventListener("click",()=> {
+                    FormInicio.classList.remove("form_hidden");
+                    FormCrear.classList.add("form_hidden");
+                })
+            });
+        </script>
+    </head>
+    <body></body>
+        
+        <div class="container">
+            <form align="center" class="form" id="inicio" action="" method="post">
+                <h2 align="center">INICIO DE SESION</h2>
+                <img src="fotologin.jpg" class="fotologin" width="20%"></br>
+                <label for="uname"><b>Usuario</b></label>
+                <input type="text" placeholder="Introduce tu usuario" name="uname" required><br>
+                <label for="psw"><b>Contrasena</b></label>
+                <input type="password" placeholder="Introduce tu contrasena" name="psw" required></br>    
+                <button type="submit" class="binicio">Iniciar de sesion</button>
+                <button type="button" class="bcancelar">Cancelar <a href=""></a></button>
+                <p class="form_text">
+                    <a class="form_link" href="#" id="linkCrearCuenta">¿No tienes cuenta? Crea cuenta</a>
+                </p>      
+
+            </form>
+            <form align="center" class="form form_hidden" id="crear" action="" method="post">
+                <h2 align="center">CREAR CUENTA</h2>
+                <img src="fotologin.jpg" class="fotologin" width="20%"></br>
+                <label for="cuname"><b>Nombre de usuario</b></label>
+                <input type="text" placeholder="Introduce tu usuario" name="uname" required><br>
+                <label for="cpsw"><b>Crear contrasena</b></label>
+                <input type="password" placeholder="Introduce tu contrasena" name="psw" required></br>    
+                <label for="vcpsw"><b>Verificar contrasena</b></label>
+                <input type="password" placeholder="Verifica tu contrasena" name="psw" required></br>    
+                <button type="submit" class="binicio">Iniciar de sesion</button>
+                <button type="button" class="bcancelar">Cancelar 
+                    <a href=""></a>
+                
+                </button>
+                <p class="form_text">
+                    <a class="form_link" href="#" id="linkIniciarSesion">¿Ya tienes una cuenta? Iniciar sesion</a>
+                </p>              
+            </form>
+        </div>
+
+    </body>
+</html>
