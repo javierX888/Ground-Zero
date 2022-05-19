@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+ <head>
+
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">      </script>
+
+ <style> 
+input[type=text] {
+width: 130px;
+box-sizing: border-box;
+border: 2px solid #ccc;
+border-radius: 4px;
+font-size: 16px;
+background-color: white;
+background-image: url('searchicon.png');
+background-position: 10px 10px; 
+background-repeat: no-repeat;
+padding: 12px 20px 12px 40px;
+-webkit-transition: width 0.4s ease-in-out;
+transition: width 0.4s ease-in-out;
+}
+
+/* Modal Content */
+.modal-content {
+background-color: #fefefe;
+margin: auto;
+padding: 20px;
+border: 1px solid #888;
+width: 150%;
+}
+
+input[type=text]:focus {
+width: 100%;
+}
+</style>
+
+
+</head>
+
+<body> 
+
+<div id="root"></div>
+
+<div class="container">
+
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" id="myBtn">Open Modal</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Note  </h4>
+      </div>
+
+      <div class="modal-body">
+        <h5 class="modal-title">New Note </h5>
+        <input type="text" id="myInput" name="search" onkeyup="autocompletado()" placeholder="Search.." title="Type in a name">
+
+        <table id="myTable">
+            <tr class="header">
+              <th style="width:10%;">Name</th>
+              <th style="width:10%;">Username</th>
+              <th style="width:10%;">Email</th>
+              <th style="width:10%;">Address</th>
+              <th style="width:10%;">Phone</th>
+              <th style="width:10%;">Company</th>
+              <th style="width:10%;">Website</th>
+            </tr>
+
+              <tr >
+                <td  id = "nameR"></td>
+                <td  id = "usernameR"></td>
+                <td  id = "emailR"></td>
+                <td  id = "addressR"></td>
+                <td  id = "phoneR"></td>
+                <td  id = "companyR"></td>
+                <td  id = "websiteR"></td>
+              <tr>
+
+
+
+          </table>
+         <ul id="author2s"></ul>
+      </div>
+      <div class="modal-footer">
+        Import: <input type="checkbox" id="myCheck">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Add Note</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">cancelar</button>
+    </div>
+
+  </div>
+</div>
+<script>
+     $(document).ready(function(){
+   $("#myBtn").click(function(){
+      $("#myModal").modal();
+      console.log("funciona");
+    });
+ });
+</script>
+
+
+  </body>
+</html>
