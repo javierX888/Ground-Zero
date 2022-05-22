@@ -18,73 +18,85 @@
                   id: 1,
                   nombre: 'Arbol',
                   precio: 20.000,
-                  imagen: 'Arbol.jpg'
+                  imagen: 'Arbol.jpg',
+                  link: 'Pag4.html'
               },
               {
                   id:2,
                   nombre: 'Abstracto',
                   precio: 150.000,
-                  imagen: 'Abstracto.jpg'
+                  imagen: 'Abstracto.jpg',
+                  link: 'Pag2.html'
               },
               {
                   id: 3,
                   nombre: 'Torre-Eiffel',
                   precio: 100.000,
-                  imagen: 'Eifel.jpg'
+                  imagen: 'Eifel.jpg',
+                  link: 'Pag3.html'
               },
               {
                   id: 4,
                   nombre: 'Faro',
                   precio: 50.000,
-                  imagen: 'Faro.jpg'
+                  imagen: 'Faro.jpg',
+                  link: 'Pag1.html'
               },
               {
                 id: 5,
                 nombre: 'Pajaro',
                 precio: 20.000,
-                imagen: 'Pajaro.jpg'
+                imagen: 'Pajaro.jpg',
+                link: 'Pag5.html'
               },
               {
                 id:6,
                 nombre:'Calle',
                 precio: 80.000,
-                imagen: 'Calle.jpg'
+                imagen: 'Calle.jpg',
+                link: 'Pag6.html'
               },
               {
                 id:7,
                 nombre: 'Pinturas de colore',
                 precio: 15.000,
-                imagen: 'PInturas de colores.jpg'
+                imagen: 'PInturas de colores.jpg',
+                link: 'Pag8.html'
               },
               {
                 id:8,
                 nombre: 'Composición VII',
                 precio: 200.000,
-                imagen: 'Composición VII.jpeg'
+                imagen: 'Composición VII.jpeg',
+                link: 'Pag10.html'
               },
               {
                 id:9,
                 nombre:'MARINA',
                 precio: 50.000,
-                imagen: 'MARINA.jpg'
+                imagen: 'MARINA.jpg',
+                link: 'Pag12.html'
               },
               {
                 id:10,
                 nombre: 'Nighthawks',
                 precio: 250.000,
-                imagen: 'Nighthawks.jpg'
+                imagen: 'Nighthawks.jpg',
+                link: 'Pag14.html'
               },
               {
                 id:11,
                 nombre: 'Bailarina',
                 precio: 40.000,
-                imagen: 'Bailarina.jpg'
+                imagen: 'Bailarina.jpg',
+                link: 'Pag16.html'
               },
               {
                 id:13,
                 nombre: 'Arboles',
                 precio: 150.000,
-                imagen: 'Arboles.jpg'
+                imagen: 'Arboles.jpg',
+                link: 'Pag18.html'
               }
 
           ];
@@ -118,16 +130,28 @@
                   const miNodoImagen = document.createElement('img');
                   miNodoImagen.classList.add('img-fluid');
                   miNodoImagen.setAttribute('src', info.imagen);
+                  // Link a Imagenes
+                  const miNodoLink = document.createElement('a');
+                  miNodoLink.classList.add('card-link');
+                  miNodoLink.textContent = "Ver mas";
+                  miNodoLink.setAttribute('href', info.link);
                   // Insertamos
                   miNodoCardBody.appendChild(miNodoImagen);
                   miNodoCardBody.appendChild(miNodoTitle);
+                  miNodoCardBody.appendChild(miNodoLink);
                   miNodo.appendChild(miNodoCardBody);
                   DOMitems.appendChild(miNodo);
+                  //
+                  
               });
+
           }
+
+          
 
           // Inicio
           renderizarProductos();
+          //renderizarCarrito();
         });
     </script>
 </head>
