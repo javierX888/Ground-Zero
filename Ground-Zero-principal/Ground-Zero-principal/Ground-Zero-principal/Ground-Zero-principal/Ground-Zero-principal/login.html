@@ -146,7 +146,7 @@
 
                 <div class="form-control">
                     <label>Contraseña</label>
-                    <input type="password"  placeholder="Introduce tu contraseña" id="password" required >
+                    <input type="password"  placeholder="Introduce tu contraseña" id="password" required data-parsley-length="[8, 20]">
                 </div>
                 
                 <button type="submit" class="binicio">Iniciar de sesion</button>
@@ -177,12 +177,12 @@
                 
                 <div class="form-control">
                     <label for="cpsw"><b>Crear contraseña</b></label>
-                    <input type="password" placeholder="Introduce tu contraseña" name="psw" required></br>
+                    <input type="password" placeholder="Introduce tu contraseña" id="psw" required required data-parsley-length="[8, 20]"> </br>
                 </div>
                 
                 <div class="form-control">
                     <label for="vcpsw"><b>Verificar contrasena</b></label>
-                    <input type="password" placeholder="Verifica tu contrasena" name="psw" required></br>
+                    <input type="password" placeholder="Verifica tu contrasena" id="cpsw" required required data-parsley-length="[8, 20]" data-parsley-equalto="#psw"></br>
                 </div>
                 
                 <button type="submit" class="binicio">Crear cuenta</button>
