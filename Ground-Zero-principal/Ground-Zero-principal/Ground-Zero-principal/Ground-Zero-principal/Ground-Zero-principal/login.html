@@ -64,7 +64,7 @@
                 display:inline-block;
                 margin-bottom: 1px;
                 border: none;
-                
+                             
                 
             }
 
@@ -127,18 +127,14 @@
                     FormCrear.classList.add("form_hidden");
                 })
             });
-
-            
-
-           
-           
+  
         </script>
     </head>
     <body>
         
         <div class="container">
             
-            <form data-parsley-validate class="form" id="inicio" action="" method="post">
+            <form data-parsley-validate class="form" id="inicio" action="index.html" method="post">
                 <div class="header"><h2>INICIO DE SESION</h2></div>
                 
                 <div class="form-control"><img src="fotologin.jpg" class="fotologin" > </div>
@@ -152,25 +148,26 @@
                     <label>Contraseña</label>
                     <input type="password"  placeholder="Introduce tu contraseña" id="password" required >
                 </div>
-               
-                <button type="submit" class="binicio">Iniciar de sesion</button>
-                <button type="button" class="bcancelar">Cancelar
-                     <a href="index.html"></a>    
-                </button>
                 
+                <button type="submit" class="binicio">Iniciar de sesion</button>
+                
+                <a href="index.html">
+                    <button type="button" class="bcancelar">Cancelar</button>
+                </a>
+                               
                 <p class="form_text">
-                    <a class="form_link" id="linkCrearCuenta">¿No tienes cuenta? Crea cuenta</a>
+                    <a class="form_link" href="#" id="linkCrearCuenta">¿No tienes cuenta? Crea cuenta</a>
                 </p>      
 
             </form>
-            <form data-parsley-validate class="form form_hidden" id="crear" action="" method="post">
+            <form data-parsley-validate class="form form_hidden" id="crear" action="index.html" method="post">
                 <div class="header"><h2>CREAR CUENTA</h2></div>
                 
                 <div class="form-control"><img src="fotologin.jpg" class="fotologin" > </div>
                 
                 <div class="form-control">
                     <label for="cuname"><b>Nombre de usuario</b></label>
-                    <input type="text" placeholder="Introduce tu usuario" name="uname" required><br>
+                    <input type="text" placeholder="Introduce tu usuario" name="uname" required required data-parsley-length="[8, 16]"><br>
                 </div>
                 
                 <div class="form-control">
@@ -189,9 +186,9 @@
                 </div>
                 
                 <button type="submit" class="binicio">Crear cuenta</button>
-                <button type="button" class="bcancelar">Cancelar 
-                    <a href=""></a>               
-                </button>
+                <a href="index.html">
+                    <button type="button" class="bcancelar" onclick="href='index.html'">Cancelar</button>
+                </a>
                 <p class="form_text">
                     <a class="form_link" href="#" id="linkIniciarSesion">¿Ya tienes una cuenta? Iniciar sesion</a>
                 </p>              
