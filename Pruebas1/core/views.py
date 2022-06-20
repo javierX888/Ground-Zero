@@ -3,7 +3,7 @@ from multiprocessing import context
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Pinturas
-from .forms import PinturasForm
+from .forms import PinturasForm, crearUsuario
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -39,9 +39,9 @@ def logoutUser(request):
     return redirect('home')
 
 def pagRegistro(request):
-    form = UserCreationForm()
+    form = crearUsuario()
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = crearUsuario(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
             user.username = user.username.lower()
