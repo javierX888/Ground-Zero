@@ -31,7 +31,7 @@ class Categoria(models.Model):
 
 # Modelo para Pinturas
 class Pinturas(models.Model):
-  idPintura = models.CharField(max_length = 6, primary_key = True, verbose_name = 'idPintura')
+  id = models.CharField(max_length = 6, primary_key = True, verbose_name = 'id')
   nombre_pintura = models.CharField(max_length = 20, verbose_name = 'Nombre Pintura')
   precio_pintura = models.IntegerField (null=True, blank =True, verbose_name = 'Precio')
   autor = models.ForeignKey (Autor, on_delete = models.CASCADE)

@@ -3,6 +3,7 @@ from django.urls import path
 from .views import form_delete_pintura, form_pinturas, home, logoutUser, paglogin, pagRegistro, form_modificar_pinturas, artistas, pinturasdemo, compra, formulariofooter
 from .views import Pag1, Pag2, Pag3, Pag4, Pag5, Pag6, Pag7, Pag8, Pag9, Pag10, Pag11, Pag12, Pag13, Pag14, Pag15, Pag16, Pag17, Pag18
 from cuenta.views import (registro_view, login1)
+from rest_pintura.views import(lista_pintura, detalle_pintura)
 urlpatterns = [
     path('', home, name="home"),
     path('login/', paglogin, name="login"),
@@ -35,6 +36,8 @@ urlpatterns = [
     path('Pag18',Pag18, name="Pag18"),
     path('api/cuenta/', registro_view, name="registro_view"),
     path('api/login/', login1, name="login1"),
+    path('api/pintura/', lista_pintura, name='lista_pintura'),
+    
 
     #urls rest
     

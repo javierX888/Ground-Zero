@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'cuenta',
+    'rest_pintura',
     'rest_framework.authtoken',
     'rest_framework',
 ]

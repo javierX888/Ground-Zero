@@ -8,6 +8,8 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 
 
 # Create your views here.
@@ -53,6 +55,7 @@ def pagRegistro(request):
             messages.error(request, 'Ocurrio un error en el registro')
     return render(request, 'core/login.html', {'form': form})
 
+@permission_classes((IsAuthenticated))
 def artistas(request):
     return render(request,'core/artistas.html')
 

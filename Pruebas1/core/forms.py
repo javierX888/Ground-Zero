@@ -21,4 +21,4 @@ class crearUsuario(UserCreationForm):
 class PinturasForm(ModelForm):
     class Meta:
         model = Pinturas
-        fields = ['idPintura','nombre_pintura','precio_pintura','autor','categoria']
+        fields = ['id','nombre_pintura','precio_pintura','autor','categoria']
