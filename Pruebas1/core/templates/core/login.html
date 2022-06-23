@@ -2,13 +2,6 @@
 <html>
     <html lang="en">
 {% load static %}
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li></li>{{message}}</li>
-    {% endfor %}
-</ul>
-{% endif %}
 
 
   <head>
@@ -119,19 +112,7 @@
         <script type="text/javascript">
             
         
-            document.addEventListener("DOMContentLoaded",()=>{
-                const FormInicio=document.querySelector("#inicio");
-                const FormCrear=document.querySelector("#crear");
-
-                document.querySelector("#linkCrearCuenta").addEventListener("click",()=> {
-                    FormInicio.classList.add("form_hidden");
-                    FormCrear.classList.remove("form_hidden");
-                })
-                document.querySelector("#linkIniciarSesion").addEventListener("click",()=> {
-                    FormInicio.classList.remove("form_hidden");
-                    FormCrear.classList.add("form_hidden");
-                })
-            });
+           
   
         </script>
     </head>
@@ -147,12 +128,12 @@
                 
                 <div class="form-control ">
                     <label for="usuario">Usuario</label>
-                    <input type="text" autofocus placeholder="Introduce tu usuario"  name="username" required data-parsley-length="[8, 16]">
+                    <input type="text" autofocus placeholder="Introduce tu usuario"  name="username" required data-parsley-length="[4, 16]">
                 </div>
 
                 <div class="form-control">
                     <label>Contraseña</label>
-                    <input type="password"  placeholder="Introduce tu contraseña" name="password" required data-parsley-length="[8, 20]">
+                    <input type="password"  placeholder="Introduce tu contraseña" name="password" required data-parsley-length="[4, 20]">
                 </div>
                 
                 <button type="submit" class="binicio">Iniciar de sesion</button>
@@ -178,7 +159,40 @@
                 
                 
                 
-                {{form.as_p}}
+                
+                
+
+                
+                <div class="form-control">
+                    <label for="cuname">Nombre de usuario</label>
+                    {{form.username}}  
+                </div>
+                
+                <div class="form-control">
+                    <label for="correo">Correo Electronico</label>
+                    {{form.email}}<br>
+                </div>
+                
+                <div class="form-control">
+                    <label for="cpsw">Crear contraseña</label>
+                    {{form.password1}}</br>
+                </div>
+
+                <div class="form-control">
+                    <label for="vpsw">Verificar contraseña</label>
+                    {{form.password2}}</br>
+                </div>
+
+                {% if messages %}
+                <ul class="messages">
+                {% for message in messages %}
+                <li></li>{{message}}</li>
+                {% endfor %}
+                </ul>
+                {% endif %}
+               
+                
+                  
                 
                 <button type="submit" class="binicio">Crear cuenta</button>
                 <a href="{%url 'home'%}">

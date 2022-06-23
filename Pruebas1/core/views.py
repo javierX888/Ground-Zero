@@ -3,11 +3,14 @@ from multiprocessing import context
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Pinturas
-from .forms import PinturasForm
+from .forms import PinturasForm, crearUsuario
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
+
 
 # Create your views here.
 
@@ -39,9 +42,9 @@ def logoutUser(request):
     return redirect('home')
 
 def pagRegistro(request):
-    form = UserCreationForm()
+    form = crearUsuario()
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = crearUsuario(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
             user.username = user.username.lower()
@@ -52,6 +55,7 @@ def pagRegistro(request):
             messages.error(request, 'Ocurrio un error en el registro')
     return render(request, 'core/login.html', {'form': form})
 
+@permission_classes((IsAuthenticated))
 def artistas(request):
     return render(request,'core/artistas.html')
 

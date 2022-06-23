@@ -93,7 +93,9 @@
     </div>
     <div class="search-container">
       <form action="/action_page.php">
+        {% if request.user.is_authenticated %}
         <button style="font-size:24px"><a href="{%url 'compra'%}" class="fa fa-shopping-cart"></a></button>
+        {% endif %}
         <input type="text" placeholder="Busqueda.." name="Busqueda">
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
